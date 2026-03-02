@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=80", "setuptools-scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rvc3"
+authors = [{ name = "Nam-Khanh Tran", email = "khanh29082003@gmail.com" }]
+readme = { file = "README.md", content-type = "text/markdown" }
+license = { file = "LICENSE" }
+dynamic = ["version"]
+
+requires-python = ">=3.10"
+dependencies = [
+    "torch",
+    "torchvision",
+    "numpy<2",
+    "pillow",
+    "tqdm",
+    "scikit-learn",
+    "pandas",
+    "opencv-contrib-python",
+]
+
+[project.optional-dependencies]
+dev = [
+    "jupyter",
+    "jupyterlab-code-formatter",
+    "jupyterlab_execute_time",
+    "jupyterlab-lsp",
+    "perspective-python",
+    "python-lsp-server[all]",
+    "lckr_jupyterlab_variableinspector",
+    "matplotlib",
+    "plotly",
+    "black",
+    "isort",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["*"]
+namespaces = false
+
+[project.scripts]
